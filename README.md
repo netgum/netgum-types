@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-  $ npm i @netgum/types -S
+  $ npm i @netgum/types
 ```
 
 ## License
