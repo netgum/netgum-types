@@ -1,6 +1,6 @@
 {
   "name": "@netgum/types",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Missing TypeScript definitions",
   "author": "Stanislaw Glogowski <hello@newobject.pl>",
   "license": "MIT",
