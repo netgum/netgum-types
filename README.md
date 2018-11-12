@@ -12,6 +12,6 @@
 
 The MIT License
 
-[npm-image]: https://badge.fury.io/js/@netgum/types.svg
+[npm-image]: https://badge.fury.io/js/%40netgum%2Ftypes.svg
 [npm-url]: https://npmjs.org/package/@netgum/types
 
