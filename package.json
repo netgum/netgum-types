@@ -1,0 +1,25 @@
+{
+  "name": "@netgum/types",
+  "version": "0.0.1",
+  "description": "Missing TypeScript definitions",
+  "author": {
+    "name": "Stanislaw Glogowski",
+    "email": "hello@newobject.pl"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/netgum/types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/netgum/types/issues"
+  },
+  "main": "./index.js",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^10.12.5",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  }
+}
