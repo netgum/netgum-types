@@ -1,6 +1,6 @@
 {
   "name": "@netgum/types",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Missing TypeScript definitions",
   "author": "Stanislaw Glogowski <hello@newobject.pl>",
   "license": "MIT",
@@ -12,13 +12,18 @@
     "url": "https://github.com/netgum/types/issues"
   },
   "main": "./index.js",
-  "scripts": {},
+  "scripts": {
+    "ts:lint": "tslint --project tsconfig.json ./node/**/*.ts ./react/**/*.ts ./react-native/**/*.ts",
+    "prepublishOnly": "npm run ts:lint"
+  },
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "^10.12.5",
-    "@types/react": "^16.7.3",
-    "@types/react-native": "^0.57.7",
+    "@types/node": "^10.12.12",
+    "@types/react": "^16.7.13",
+    "@types/react-native": "^0.57.17",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.6"
+    "tslint-config-airbnb": "^5.11.1",
+    "tsutils": "^3.5.2",
+    "typescript": "^3.2.2"
   }
 }

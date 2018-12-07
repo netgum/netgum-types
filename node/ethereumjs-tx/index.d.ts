@@ -1,13 +1,16 @@
-declare module "ethereumjs-tx" {
-  const EthereumTx: {
-    new(params: EthereumTx.IEthereumTxParams): EthereumTx.IEthereumTx;
+declare module 'ethereumjs-tx' {
+  const ethereumTx: {
+    new(params: ethereumTx.IEthereumTxParams): ethereumTx.IEthereumTx;
   };
 
-  namespace EthereumTx {
+  namespace ethereumTx {
     export interface IEthereumTx {
       sign(privateKey: Buffer);
+
       serialize(): Buffer;
+
       verifySignature(): boolean;
+
       getSenderAddress(): string;
     }
 
@@ -22,5 +25,5 @@ declare module "ethereumjs-tx" {
     }
   }
 
-  export = EthereumTx;
+  export = ethereumTx;
 }

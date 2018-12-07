@@ -1,6 +1,6 @@
-declare module "react-native-qrcode-svg" {
-  import { ComponentClass } from "react";
-  import { ImageSourcePropType } from "react-native";
+declare module 'react-native-qrcode-svg' {
+  import { ComponentClass } from 'react';
+  import { ImageSourcePropType } from 'react-native';
 
   export interface IQrCodeSvgProps {
     value?: string;
@@ -13,10 +13,10 @@ declare module "react-native-qrcode-svg" {
     logoMargin?: number;
     logoBorderRadius?: number;
     getRef?: () => any;
-    ecl?: "L" | "M" | "Q" | "H";
+    ecl?: 'L' | 'M' | 'Q' | 'H';
   }
 
-  const QrCodeSvg: ComponentClass<IQrCodeSvgProps>;
+  const qrCodeSvg: ComponentClass<IQrCodeSvgProps>;
 
-  export default QrCodeSvg;
+  export default qrCodeSvg;
 }

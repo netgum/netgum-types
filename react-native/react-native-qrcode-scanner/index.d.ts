@@ -1,6 +1,6 @@
-declare module "react-native-qrcode-scanner" {
-  import { ReactNode, ComponentClass } from "react";
-  import { ViewStyle, StyleProp } from "react-native";
+declare module 'react-native-qrcode-scanner' {
+  import { ReactNode, ComponentClass } from 'react';
+  import { ViewStyle, StyleProp } from 'react-native';
 
   export interface IQrCodeScannerProps {
     onRead?: TQrCodeScannerHandler;
@@ -19,7 +19,7 @@ declare module "react-native-qrcode-scanner" {
 
   export type TQrCodeScannerHandler = (event: IQrCodeScannerEvent) => any;
 
-  const QrCodeScanner: ComponentClass<IQrCodeScannerProps>;
+  const qrCodeScanner: ComponentClass<IQrCodeScannerProps>;
 
-  export default QrCodeScanner;
+  export default qrCodeScanner;
 }

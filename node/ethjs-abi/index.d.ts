@@ -1,4 +1,4 @@
-declare module "ethjs-abi" {
+declare module 'ethjs-abi' {
   export interface IAbiItem {
     name?: string;
     type: string;
@@ -6,18 +6,19 @@ declare module "ethjs-abi" {
     payable?: boolean;
     constant?: boolean;
     stateMutability?: string;
-    inputs?: Array<{
+    inputs?: {
       indexed?: boolean,
       name: string,
       type: string,
-    }>;
-    outputs?: Array<{
+    }[];
+    outputs?: {
       name: string,
       type: string,
-    }>;
+    }[];
   }
+
   export interface IResult {
-    [ key: string ]: any;
+    [key: string]: any;
   }
 
   export interface ILog extends IResult {

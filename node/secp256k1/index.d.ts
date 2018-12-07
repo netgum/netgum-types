@@ -1,5 +1,5 @@
-declare module "secp256k1" {
-  import { Buffer } from "buffer";
+declare module 'secp256k1' {
+  import { Buffer } from 'buffer';
 
   export function privateKeyVerify(privateKey: Buffer): boolean;
 
