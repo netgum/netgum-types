@@ -1,14 +1,12 @@
 declare module 'react-jazzicon' {
   import { ComponentClass } from 'react';
 
-  const jazzicon: ComponentClass<jazzicon.IJazziconProps>;
-
-  namespace jazzicon {
-    export interface IJazziconProps {
-      diameter: number;
-      seed: number;
-    }
+  export interface IJazzIconProps {
+    diameter: number;
+    seed: number;
   }
 
-  export default jazzicon;
+  const JazzIcon: ComponentClass<IJazzIconProps>;
+
+  export default JazzIcon;
 }

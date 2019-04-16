@@ -1,118 +1,115 @@
 declare module 'ethjs' {
   import { IBN } from 'bn.js';
 
-  const eth: {
-    HttpProvider: {
-      new(endpoint: string): eth.IProvider;
-    };
+  export interface IEth {
+    net_version(): Promise<string>;
 
-    new(provider?: eth.IProvider): eth.IEth;
-  };
+    accounts(): Promise<string[]>;
 
-  namespace eth {
+    personal_sign(message: string, address: string): Promise<string>;
 
-    export interface IEth {
-      net_version(): Promise<string>;
+    getBalance(address: string, block: TBlockParam): Promise<IBN>;
 
-      accounts(): Promise<string[]>;
+    getTransactionCount(address: string, block: TBlockParam): Promise<IBN>;
 
-      personal_sign(message: string, address: string): Promise<string>;
+    blockNumber(): Promise<IBN>;
 
-      getBalance(address: string, block: TBlockParam): Promise<IBN>;
+    gasPrice(): Promise<IBN>;
 
-      getTransactionCount(address: string, block: TBlockParam): Promise<IBN>;
+    getBlockByNumber(block: TBlockParam, responseTransactions: boolean): Promise<IBlockByNumberResponse>;
 
-      blockNumber(): Promise<IBN>;
+    getTransactionReceipt(hash: string): Promise<ITransactionReceipt>;
 
-      gasPrice(): Promise<IBN>;
+    call(options: ICallOptions, block: TBlockParam): Promise<string>;
 
-      getBlockByNumber(block: TBlockParam, responseTransactions: boolean): Promise<IBlockByNumberResponse>;
+    sendRawTransaction(data: string): Promise<string>;
 
-      getTransactionReceipt(hash: string): Promise<ITransactionReceipt>;
+    sendTransaction(options: ISendTransactionOptions): Promise<string>;
 
-      call(options: ICallOptions, block: TBlockParam): Promise<string>;
-
-      sendRawTransaction(data: string): Promise<string>;
-
-      sendTransaction(options: ISendTransactionOptions): Promise<string>;
-
-      estimateGas(options: Partial<ISendTransactionOptions>): Promise<IBN>;
-    }
-
-    export interface IProvider {
-      send?: (payload: any) => any;
-      sendAsync: (payload: any, callback: (err: any, data: any) => void,
-      ) => void;
-      isConnected?: () => boolean;
-    }
-
-    export type TBlockParam = IBN | 'earliest' | 'pending' | 'latest';
-
-    export interface ICallOptions {
-      to: string;
-      data: string;
-
-      [key: string]: any;
-    }
-
-    export interface ISendTransactionOptions {
-      to: string;
-      value?: string;
-      gas?: string;
-      data?: string;
-
-      [key: string]: any;
-    }
-
-    export interface IBlockByNumberResponse {
-      number: IBN;
-      hash: string;
-      transactions?: eth.IBlockTransaction[];
-
-      [key: string]: any;
-    }
-
-    export interface IBlockTransaction {
-      blockHash: string;
-      blockNumber: IBN;
-      from: string;
-      gas: IBN;
-      gasPrice: IBN;
-      hash: string;
-      input: string;
-      nonce: IBN;
-      to: string;
-      transactionIndex: IBN;
-      value: IBN;
-      v: string;
-      r: string;
-      s: string;
-    }
-
-    export interface ITransactionReceipt {
-      blockHash: string;
-      blockNumber: IBN;
-      transactionHash: string;
-      transactionIndex: IBN;
-      to: string;
-      from: string;
-      cumulativeGasUsed: IBN;
-      gasUsed: IBN;
-      contractAddress: string;
-      logs: {
-        address: string;
-        topics: IBN[];
-        data: string;
-        blockNumber: IBN;
-        blockHash: string;
-        transactionHash: string;
-        transactionIndex: IBN;
-        logIndex: IBN;
-      }[];
-      logsBloom: string;
-      status: string;
-    }
+    estimateGas(options: Partial<ISendTransactionOptions>): Promise<IBN>;
   }
 
-  export = eth;
+  export interface IProvider {
+    send?: (payload: any) => any;
+    sendAsync: (payload: any, callback: (err: any, data: any) => void,
+    ) => void;
+    isConnected?: () => boolean;
+  }
+
+  export type TBlockParam = IBN | 'earliest' | 'pending' | 'latest';
+
+  export interface ICallOptions {
+    to: string;
+    data: string;
+
+    [key: string]: any;
+  }
+
+  export interface ISendTransactionOptions {
+    to: string;
+    value?: string;
+    gas?: string;
+    data?: string;
+
+    [key: string]: any;
+  }
+
+  export interface IBlockByNumberResponse {
+    number: IBN;
+    hash: string;
+    transactions?: IBlockTransaction[];
+
+    [key: string]: any;
+  }
+
+  export interface IBlockTransaction {
+    blockHash: string;
+    blockNumber: IBN;
+    from: string;
+    gas: IBN;
+    gasPrice: IBN;
+    hash: string;
+    input: string;
+    nonce: IBN;
+    to: string;
+    transactionIndex: IBN;
+    value: IBN;
+    v: string;
+    r: string;
+    s: string;
+  }
+
+  export interface ITransactionReceipt {
+    blockHash: string;
+    blockNumber: IBN;
+    transactionHash: string;
+    transactionIndex: IBN;
+    to: string;
+    from: string;
+    cumulativeGasUsed: IBN;
+    gasUsed: IBN;
+    contractAddress: string;
+    logs: {
+      address: string;
+      topics: IBN[];
+      data: string;
+      blockNumber: IBN;
+      blockHash: string;
+      transactionHash: string;
+      transactionIndex: IBN;
+      logIndex: IBN;
+    }[];
+    logsBloom: string;
+    status: string;
+  }
+
+  const Eth: {
+    HttpProvider: {
+      new(endpoint: string): IProvider;
+    };
+
+    new(provider?: IProvider): IEth;
+  };
+
+  export default Eth;
 }

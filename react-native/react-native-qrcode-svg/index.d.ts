@@ -16,7 +16,7 @@ declare module 'react-native-qrcode-svg' {
     ecl?: 'L' | 'M' | 'Q' | 'H';
   }
 
-  const qrCodeSvg: ComponentClass<IQrCodeSvgProps>;
+  const QrCodeSvg: ComponentClass<IQrCodeSvgProps>;
 
-  export default qrCodeSvg;
+  export default QrCodeSvg;
 }

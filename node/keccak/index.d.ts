@@ -3,5 +3,5 @@ declare module 'keccak' {
 
   const keccak: (type: 'keccak256' | 'keccak512') => Hash;
 
-  export = keccak;
+  export default keccak;
 }

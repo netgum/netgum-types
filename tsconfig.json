@@ -1,19 +1,24 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": false,
-    "declaration": true,
+    "skipLibCheck": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": true,
+    "module": "commonjs",
+    "target": "es2016",
     "removeComments": true,
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
       "dom",
+      "esnext.asynciterable",
       "es2015.promise",
+      "es2015.proxy",
       "es2016",
       "es2017.object"
     ]

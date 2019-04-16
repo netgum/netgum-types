@@ -1,29 +1,27 @@
 declare module 'ethereumjs-tx' {
-  const ethereumTx: {
-    new(params: ethereumTx.IEthereumTxParams): ethereumTx.IEthereumTx;
-  };
+  export interface IEthTx {
+    sign(privateKey: Buffer);
 
-  namespace ethereumTx {
-    export interface IEthereumTx {
-      sign(privateKey: Buffer);
+    serialize(): Buffer;
 
-      serialize(): Buffer;
+    verifySignature(): boolean;
 
-      verifySignature(): boolean;
-
-      getSenderAddress(): string;
-    }
-
-    export interface IEthereumTxParams {
-      nonce: string;
-      gasPrice: string;
-      gasLimit?: string;
-      to: string;
-      value?: string;
-      data: string;
-      chainId?: number;
-    }
+    getSenderAddress(): string;
   }
 
-  export = ethereumTx;
+  export interface IEthTxParams {
+    nonce: string;
+    gasPrice: string;
+    gasLimit?: string;
+    to: string;
+    value?: string;
+    data: string;
+    chainId?: number;
+  }
+
+  const EthTx: {
+    new(params: IEthTxParams): IEthTx;
+  };
+
+  export default EthTx;
 }
