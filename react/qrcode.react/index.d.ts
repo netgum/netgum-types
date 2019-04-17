@@ -1,16 +1,20 @@
 declare module 'qrcode.react' {
   import { ComponentClass } from 'react';
 
-  export interface IQrCodeProps {
-    value: string;
-    renderAs?: 'canvas' | 'svg';
-    size?: number;
-    bgColor?: string;
-    fgColor?: string;
-    level?: 'L' | 'M' | 'Q' | 'H';
+  declare class QrCode extends ComponentClass<QrCode.IProps> {
+    //
   }
 
-  const QrCode: ComponentClass<IQrCodeProps>;
+  declare namespace QrCode {
+    export interface IProps {
+      value: string;
+      renderAs?: 'canvas' | 'svg';
+      size?: number;
+      bgColor?: string;
+      fgColor?: string;
+      level?: 'L' | 'M' | 'Q' | 'H';
+    }
+  }
 
-  export default QrCode;
+  export = QrCode;
 }

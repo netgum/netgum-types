@@ -1,5 +1,9 @@
 declare module 'ethereumjs-tx' {
-  export interface IEthTx {
+  import { Buffer } from 'buffer';
+
+  declare class EthTx {
+    constructor(options: EthTx.IOptions);
+
     sign(privateKey: Buffer);
 
     serialize(): Buffer;
@@ -9,19 +13,17 @@ declare module 'ethereumjs-tx' {
     getSenderAddress(): string;
   }
 
-  export interface IEthTxParams {
-    nonce: string;
-    gasPrice: string;
-    gasLimit?: string;
-    to: string;
-    value?: string;
-    data: string;
-    chainId?: number;
+  declare namespace EthTx {
+    export interface IOptions {
+      nonce: string;
+      gasPrice: string;
+      gasLimit?: string;
+      to: string;
+      value?: string;
+      data: string;
+      chainId?: number;
+    }
   }
 
-  const EthTx: {
-    new(params: IEthTxParams): IEthTx;
-  };
-
-  export default EthTx;
+  export = EthTx;
 }

@@ -1,8 +1,12 @@
 declare module 'bn.js' {
   import { Buffer } from 'buffer';
 
-  export interface IBN {
-    clone(): IBN;
+  declare class BN {
+    static isBN(num: any): boolean;
+
+    constructor(num: number | string | number[] | Buffer, base?: number, endian?: 'le' | 'be');
+
+    clone(): BN;
 
     toString(base?: number, length?: number): string;
 
@@ -42,57 +46,52 @@ declare module 'bn.js' {
 
     isBN(b: any): boolean;
 
-    neg(): IBN;
+    neg(): BN;
 
-    abs(): IBN;
+    abs(): BN;
 
-    add(b: IBN): IBN;
+    add(b: BN): BN;
 
-    sub(b: IBN): IBN;
+    sub(b: BN): BN;
 
-    mul(b: IBN): IBN;
+    mul(b: BN): BN;
 
-    sqr(): IBN;
+    sqr(): BN;
 
-    pow(b: IBN): IBN;
+    pow(b: BN): BN;
 
-    div(b: IBN): IBN;
+    div(b: BN): BN;
 
-    mod(b: IBN): IBN;
+    mod(b: BN): BN;
 
-    divRound(b: IBN): IBN;
+    divRound(b: BN): BN;
 
-    or(b: IBN): IBN;
+    or(b: BN): BN;
 
-    and(b: IBN): IBN;
+    and(b: BN): BN;
 
-    xor(b: IBN): IBN;
+    xor(b: BN): BN;
 
-    setn(b: number): IBN;
+    setn(b: number): BN;
 
-    shln(b: number): IBN;
+    shln(b: number): BN;
 
-    shrn(b: number): IBN;
+    shrn(b: number): BN;
 
     testn(b: number): boolean;
 
-    maskn(b: number): IBN;
+    maskn(b: number): BN;
 
-    bincn(b: number): IBN;
+    bincn(b: number): BN;
 
-    notn(w: number): IBN;
+    notn(w: number): BN;
 
-    gcd(b: IBN): IBN;
+    gcd(b: BN): BN;
 
-    egcd(b: IBN): { a: IBN, b: IBN, gcd: IBN };
+    egcd(b: BN): { a: BN, b: BN, gcd: BN };
 
-    invm(b: IBN): IBN;
+    invm(b: BN): BN;
   }
 
-  const BN: {
-    new(num: number | string | number[] | Buffer, base?: number, endian?: 'le' | 'be'): IBN;
-    isBN(num: any): boolean;
-  };
-
-  export default BN;
+  export = BN;
 }
