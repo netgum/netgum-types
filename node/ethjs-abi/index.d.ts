@@ -31,6 +31,7 @@ declare module 'ethjs-abi' {
   export const encodeEvent: (abiItem: IAbiItem, args: any[]) => string;
   export const encodeMethod: (abiItem: IAbiItem, args: any[]) => string;
 
+  export const decodeParams: (names: string[], types: string[], data: string) => IResult;
   export const decodeMethod: (abiItem: IAbiItem, data: string) => IResult;
   export const decodeEvent: (abiItem: IAbiItem, data: string) => IResult;
 
