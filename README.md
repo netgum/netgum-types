@@ -17,6 +17,7 @@ Add type root(s) to your `tsconfig.json` configuration.
 {
   "compilerOptions": {
     "typeRoots": [
+      "./node_modules/@netgum/types/ink",
       "./node_modules/@netgum/types/node",
       "./node_modules/@netgum/types/react",
       "./node_modules/@netgum/types/react-native"
@@ -27,6 +28,13 @@ Add type root(s) to your `tsconfig.json` configuration.
 
 ## List of definitions
 
+### `ink` type root
+
+* [ink-box](https://npmjs.com/package/ink-box)
+* [ink-link](https://npmjs.com/package/ink-link)
+* [ink-spinner](https://npmjs.com/package/ink-spinner)
+* [ink-tab](https://npmjs.com/package/ink-tab)
+
 ### `node` type root
 
 * [bn.js](https://npmjs.com/package/bn.js)
@@ -35,6 +43,7 @@ Add type root(s) to your `tsconfig.json` configuration.
 * [ethjs-abi](https://npmjs.com/package/ethjs-abi)
 * [idna-uts46-hx](https://npmjs.com/package/idna-uts46-hx)
 * [keccak](https://npmjs.com/package/keccak)
+* [qrcode-terminal](https://npmjs.com/package/qrcode-terminal)
 * [secp256k1](https://npmjs.com/package/secp256k1)
 * [triple-beam](https://npmjs.com/package/triple-beam)
 

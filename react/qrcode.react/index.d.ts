@@ -1,7 +1,7 @@
 declare module 'qrcode.react' {
-  import { ComponentClass } from 'react';
+  import { Component } from 'react';
 
-  declare class QrCode extends ComponentClass<QrCode.IProps> {
+  declare class QrCode extends Component<QrCode.IProps> {
     //
   }
 

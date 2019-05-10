@@ -1,8 +1,8 @@
 declare module 'react-native-qrcode-svg' {
-  import { ComponentClass } from 'react';
+  import { Component } from 'react';
   import { ImageSourcePropType } from 'react-native';
 
-  declare class QrCodeSvg extends ComponentClass<QrCodeSvg.IProps> {
+  declare class QrCodeSvg extends Component<QrCodeSvg.IProps> {
     //
   }
 

@@ -1,7 +1,7 @@
 declare module 'react-jazzicon' {
-  import { ComponentClass } from 'react';
+  import { Component } from 'react';
 
-  declare class JazzIcon extends ComponentClass<JazzIcon.IProps> {
+  declare class JazzIcon extends Component<JazzIcon.IProps> {
     //
   }
 
