@@ -17,7 +17,7 @@ declare module 'ink-tab' {
 
   declare namespace Tabs {
     export interface IProps {
-      onChange?: TOnChangeHandler;
+      onChange: TOnChangeHandler;
       keyMap?: IKeyMap;
     }
 
