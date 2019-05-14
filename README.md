@@ -1,6 +1,8 @@
-# Missing TypeScript definitions
+# NetGum Types
 
 [![NPM version][npm-image]][npm-url]
+
+> Missing TypeScript definitions
 
 ## Installation
 
@@ -50,6 +52,7 @@ Add type root(s) to your `tsconfig.json` configuration.
 ### `react` type root
 
 * [qrcode.react](https://npmjs.com/package/qrcode.react)
+* [react-highlight](https://npmjs.com/package/react-highlight)
 * [react-jazzicon](https://npmjs.com/package/react-jazzicon)
 
 ### `react-native` type root
