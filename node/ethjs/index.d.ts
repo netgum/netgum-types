@@ -24,6 +24,8 @@ declare module 'ethjs' {
 
     getBlockByNumber(block: Eth.TBlockParam, responseTransactions: boolean): Promise<Eth.IBlockByNumberResponse>;
 
+    getTransactionByHash(hash: string): Promise<Eth.ITransaction>;
+
     getTransactionReceipt(hash: string): Promise<Eth.ITransactionReceipt>;
 
     call(options: Eth.ICallOptions, block: Eth.TBlockParam): Promise<string>;
@@ -70,6 +72,23 @@ declare module 'ethjs' {
     }
 
     export interface IBlockTransaction {
+      blockHash: string;
+      blockNumber: BN;
+      from: string;
+      gas: BN;
+      gasPrice: BN;
+      hash: string;
+      input: string;
+      nonce: BN;
+      to: string;
+      transactionIndex: BN;
+      value: BN;
+      v: string;
+      r: string;
+      s: string;
+    }
+
+    export interface ITransaction {
       blockHash: string;
       blockNumber: BN;
       from: string;
